@@ -28,167 +28,105 @@
             -webkit-text-fill-color: transparent; 
         }
 
-        /* The Visually Enticing Button & Animation */
-        .contact-btn {
+        /* Neon WhatsApp Button */
+        .btn-wa {
             display: inline-flex;
             align-items: center;
             gap: 10px;
             background: #00d2ff;
             color: #050b18;
-            padding: 12px 28px;
+            padding: 12px 24px;
             border-radius: 50px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s ease;
-            position: relative;
-            text-decoration: none;
             box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
             animation: pulse-glow 2s infinite;
         }
 
-        .contact-btn:hover {
-            background: #fff;
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.6);
-            color: #00d2ff;
+        /* Futuristic Email Button */
+        .btn-mail {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
         }
+
+        .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 210, 255, 0.6); background: #fff; color: #00d2ff; }
+        .btn-mail:hover { background: rgba(255, 255, 255, 0.1); border-color: #00d2ff; transform: translateY(-3px); }
 
         @keyframes pulse-glow {
             0% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(0, 210, 255, 0); }
+            70% { box-shadow: 0 0 0 12px rgba(0, 210, 255, 0); }
             100% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0); }
         }
 
-        /* Reveal Animation */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-
-        #main-logo { transition: transform 0.3s ease; filter: drop-shadow(0 0 8px rgba(0, 210, 255, 0.3)); }
-        #main-logo:hover { transform: scale(1.1) rotate(5deg); }
     </style>
 </head>
 <body class="text-white">
 
-    <nav class="p-4 md:p-6 flex justify-between items-center max-w-7xl mx-auto sticky top-0 z-50 glass rounded-b-2xl mt-0 md:mt-2">
+    <nav class="p-4 md:p-6 flex justify-between items-center max-w-7xl mx-auto sticky top-0 z-50 glass rounded-b-2xl">
         <div class="flex items-center gap-3">
-            <img id="main-logo" src="image\Gemini_Generated_Image_4z0fjj4z0fjj4z0f.png" alt="Atlas Sync" class="w-10 h-10 rounded-lg cursor-pointer">
+            <img id="main-logo" src="https://via.placeholder.com/40x40/00d2ff/ffffff?text=AS" alt="Atlas Sync" class="w-10 h-10 rounded-lg">
             <div class="text-xl md:text-2xl font-extrabold tracking-tighter">ATLAS <span class="gradient-text">SYNC</span></div>
         </div>
-        <div class="hidden md:flex space-x-8 text-sm uppercase font-bold tracking-widest text-gray-400 items-center">
-            <a href="#services" class="hover:text-cyan-400 transition">Services</a>
-            <a href="#portfolio" class="hover:text-cyan-400 transition">Portfolio</a>
-            <a href="https://wa.me/2348085742261" target="_blank" class="contact-btn text-xs">Secure Your Spot</a>
+        <div class="hidden md:flex space-x-4 items-center">
+            <a href="mailto:atlassync1@gmail.com" class="text-gray-400 hover:text-white transition text-sm font-bold uppercase tracking-widest mr-4">Email Us</a>
+            <a href="https://wa.me/2348085742261" target="_blank" class="btn-wa text-xs">WhatsApp Squad</a>
         </div>
-        <a href="https://wa.me/2348085742261" class="md:hidden text-cyan-400 text-2xl"><i class="fa-brands fa-whatsapp"></i></a>
+        <div class="md:hidden flex gap-4 text-xl">
+            <a href="mailto:atlassync1@gmail.com" class="text-gray-400"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://wa.me/2348085742261" class="text-cyan-400"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
     </nav>
 
     <header class="py-24 px-6 text-center max-w-5xl mx-auto reveal">
-        <div class="inline-block px-4 py-1 glass rounded-full text-cyan-400 text-xs font-bold tracking-widest uppercase mb-6">
-            The Digital Transformation Agency
+        <div class="inline-block px-4 py-1 glass rounded-full text-cyan-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-6">
+            Digital Transformation for Local Business
         </div>
-        <h1 class="text-5xl md:text-8xl font-black mb-6 tracking-tight leading-none">
+        <h1 class="text-5xl md:text-8xl font-black mb-8 tracking-tight leading-none">
             SYNCING THE <br><span class="gradient-text">UNSEEN.</span>
         </h1>
-        <p class="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-medium">
-            We find high-potential local businesses on the map and build the digital infrastructure they're missing. 
+        <p class="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
+            We identify high-potential businesses missing from the digital map and build the infrastructure to make them invincible.
         </p>
-        <div class="flex flex-col md:flex-row justify-center gap-6">
-            <a href="https://wa.me/2348085742261" target="_blank" class="contact-btn py-5 px-10">
+        
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <a href="https://wa.me/2348085742261" target="_blank" class="btn-wa w-full sm:w-auto justify-center">
                 <i class="fa-brands fa-whatsapp text-xl"></i>
-                <span>Get Synced Now</span>
+                <span>WhatsApp Us</span>
+            </a>
+            <a href="mailto:atlassync1@gmail.com" class="btn-mail w-full sm:w-auto justify-center">
+                <i class="fa-solid fa-envelope text-xl"></i>
+                <span>Email Squad</span>
             </a>
         </div>
     </header>
 
     <section id="services" class="py-20 max-w-7xl mx-auto px-6 reveal">
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="glass p-8 rounded-3xl hover:border-cyan-500/50 transition">
-                <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center mb-6">
-                    <i class="fa-solid fa-map-location-dot text-2xl text-cyan-400"></i>
-                </div>
+        <div class="grid md:grid-cols-3 gap-8 text-left">
+            <div class="glass p-8 rounded-3xl">
+                <i class="fa-solid fa-map-location-dot text-2xl text-cyan-400 mb-6 block"></i>
                 <h3 class="text-xl font-bold mb-3">Maps Discovery</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Our proprietary search methods identify businesses hidden in plain sight on Google Maps that lack a web presence.</p>
+                <p class="text-gray-400 text-sm">We find top-rated local shops that don't have a website yet.</p>
             </div>
-            <div class="glass p-8 rounded-3xl hover:border-cyan-500/50 transition">
-                <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center mb-6">
-                    <i class="fa-solid fa-code text-2xl text-cyan-400"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">High-End Web Dev</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">We don't do templates. We build high-conversion, speed-optimized sites designed for modern hardware.</p>
+            <div class="glass p-8 rounded-3xl border-cyan-500/30">
+                <i class="fa-solid fa-code text-2xl text-cyan-400 mb-6 block"></i>
+                <h3 class="text-xl font-bold mb-3">Custom Build</h3>
+                <p class="text-gray-400 text-sm">Clean, modern websites built for speed and conversions.</p>
             </div>
-            <div class="glass p-8 rounded-3xl hover:border-cyan-500/50 transition">
-                <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center mb-6">
-                    <i class="fa-solid fa-bolt text-2xl text-cyan-400"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Local SEO Pulse</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Optimization that puts your business at the top of the "Near Me" search results, driving immediate traffic.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="py-20 max-w-7xl mx-auto px-6">
-        <h2 class="text-4xl font-black mb-12 text-center">RECENT <span class="gradient-text">SYNCS</span></h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            
-            <div class="glass overflow-hidden rounded-3xl reveal group border-none">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                </div>
-                <div class="p-8">
-                    <h3 class="text-lg font-extrabold uppercase mb-2">Mama Africa Kitchen</h3>
-                    <p class="text-cyan-400 text-[10px] font-bold tracking-widest mb-4">MAPS + WEB STACK</p>
-                    <p class="text-gray-400 text-sm">Full digital footprint creation for a local favorite.</p>
-                </div>
-            </div>
-
-            <div class="glass overflow-hidden rounded-3xl reveal group border-none">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1556740734-7f9a2b7a0f40?auto=format&fit=crop&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                </div>
-                <div class="p-8">
-                    <h3 class="text-lg font-extrabold uppercase mb-2">Lagos Tech Supplies</h3>
-                    <p class="text-cyan-400 text-[10px] font-bold tracking-widest mb-4">E-COMMERCE SYNC</p>
-                    <p class="text-gray-400 text-sm">Inventory syncing with Google Business products.</p>
-                </div>
-            </div>
-
-            <div class="glass overflow-hidden rounded-3xl reveal group border-none">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                </div>
-                <div class="p-8">
-                    <h3 class="text-lg font-extrabold uppercase mb-2">Elite Wellness Clinic</h3>
-                    <p class="text-cyan-400 text-[10px] font-bold tracking-widest mb-4">BOOKING AUTOMATION</p>
-                    <p class="text-gray-400 text-sm">Custom appointment engine for high-traffic clinics.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <footer class="py-16 text-center border-t border-white/5">
-        <div class="text-2xl font-black tracking-tighter mb-4 uppercase">ATLAS SYNC</div>
-        <p class="text-gray-600 text-xs tracking-[0.4em] uppercase">Built by the Squad © 2026</p>
-    </footer>
-
-    <script>
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal();
-
-        document.getElementById('main-logo').onclick = () => {
-            console.log("Atlas Sync System: Online");
-        };
-    </script>
-</body>
-</html>
+            <div class="glass p-8 rounded-3xl">
+                <i class="fa-solid fa-bolt text-2xl text-cyan-400 mb-6 block"></i>
+                <h3 class="text-xl font-bold mb-3">Local SEO</h3>
+                <p class="
