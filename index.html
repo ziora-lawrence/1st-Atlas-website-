@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atlas Sync | Bridging the Digital Gap</title>
+    
+    <meta name="title" content="Atlas Sync | Web Design & Digital Growth Ibadan">
+    <meta name="description" content="Helping Ibadan & Lagos businesses get seen. We build high-performance websites for clinics, schools, and local firms.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Atlas Sync | Bridging the Digital Gap">
+    <meta property="og:description" content="We turn local businesses into digital powerhouses.">
+    <meta property="og:image" content="image/preview-thumbnail.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -28,7 +37,6 @@
             -webkit-text-fill-color: transparent; 
         }
 
-        /* Neon WhatsApp Button */
         .btn-wa {
             display: inline-flex;
             align-items: center;
@@ -45,7 +53,6 @@
             animation: pulse-glow 2s infinite;
         }
 
-        /* Futuristic Email Button */
         .btn-mail {
             display: inline-flex;
             align-items: center;
@@ -72,22 +79,27 @@
 
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Ensures site is visible if user has animations disabled */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; }
+        }
     </style>
 </head>
 <body class="text-white">
 
     <nav class="p-4 md:p-6 flex justify-between items-center max-w-7xl mx-auto sticky top-0 z-50 glass rounded-b-2xl">
         <div class="flex items-center gap-3">
-            <img id="main-logo" src="image\Gemini_Generated_Image_4z0fjj4z0fjj4z0f.png" alt="Atlas Sync" class="w-10 h-10 rounded-lg">
+            <img id="main-logo" src="image/Gemini_Generated_Image_4z0fjj4z0fjj4z0f.png" alt="Atlas Sync" class="w-10 h-10 rounded-lg">
             <div class="text-xl md:text-2xl font-extrabold tracking-tighter">ATLAS <span class="gradient-text">SYNC</span></div>
         </div>
         <div class="hidden md:flex space-x-4 items-center">
             <a href="mailto:atlassync1@gmail.com" class="text-gray-400 hover:text-white transition text-sm font-bold uppercase tracking-widest mr-4">Email Us</a>
-            <a href="https://wa.me/2349035449434" target="_blank" class="btn-wa text-xs">WhatsApp Squad</a>
+            <a href="#" class="wa-link btn-wa text-xs" target="_blank" rel="noopener noreferrer">WhatsApp Squad</a>
         </div>
         <div class="md:hidden flex gap-4 text-xl">
             <a href="mailto:atlassync1@gmail.com" class="text-gray-400"><i class="fa-solid fa-envelope"></i></a>
-            <a href="https://wa.me/2349035449434" class="text-cyan-400"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="wa-link text-cyan-400" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
     </nav>
 
@@ -103,7 +115,7 @@
         </p>
         
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <a href="https://wa.me/2349035449434" target="_blank" class="btn-wa w-full sm:w-auto justify-center">
+            <a href="#" class="wa-link btn-wa w-full sm:w-auto justify-center" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-whatsapp text-xl"></i>
                 <span>WhatsApp Us</span>
             </a>
@@ -171,7 +183,7 @@
                 Let's transform your business into a digital powerhouse. Get in touch with our squad today.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="https://wa.me/2349035449434" target="_blank" class="btn-wa w-full sm:w-auto justify-center">
+                <a href="#" class="wa-link btn-wa w-full sm:w-auto justify-center" target="_blank" rel="noopener noreferrer">
                     <i class="fa-brands fa-whatsapp text-xl"></i>
                     <span>Chat on WhatsApp</span>
                 </a>
@@ -186,12 +198,20 @@
     <footer class="border-t border-cyan-500/20 mt-20 py-8 px-6 text-center text-gray-400 max-w-7xl mx-auto">
         <p class="text-sm">&copy; 2026 Atlas Sync. Bridging the Digital Gap. All rights reserved.</p>
         <div class="flex justify-center gap-6 mt-4 text-lg">
-            <a href="https://wa.me/2349035449434" class="text-cyan-400 hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="wa-link text-cyan-400 hover:text-white transition" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="mailto:atlassync1@gmail.com" class="text-cyan-400 hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
         </div>
     </footer>
 
     <script>
+        // --- NEW: Centralized Number Management ---
+        const WHATSAPP_NUMBER = "2349035449434"; 
+        
+        // This automatically updates every link with the class "wa-link"
+        document.querySelectorAll('.wa-link').forEach(link => {
+            link.href = `https://wa.me/${WHATSAPP_NUMBER}`;
+        });
+
         // Intersection Observer for reveal animations
         const revealElements = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
